@@ -10,3 +10,9 @@ var map = new ol.Map({
         zoom: 17
     })
 });
+
+map.on('click', function(event){
+    var coordinate = event.coordinate;
+    var lonLat = ol.proj.toLonLat(coordinate);
+    console.log('Coordiantes:',lonLat[0].toFixed(4),lonLat[1].toFixed(4));
+});
